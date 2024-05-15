@@ -62,7 +62,7 @@ class _ConversionCardState extends State<ConversionCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(25, 100, 25, 25),
+      padding: const EdgeInsets.fromLTRB(25, 50, 25, 25),
       child: Column(
         children: [
           SizedBox(
@@ -72,12 +72,12 @@ class _ConversionCardState extends State<ConversionCard> {
               controller: amountController,
               decoration: InputDecoration(
                 hintText: 'Enter Amount',
-                hintStyle: TextStyle(color: Colors.black, fontSize: 28),
+                hintStyle: TextStyle(color: Colors.black26, fontSize: 25),
                 filled: true,
                 fillColor: Colors.white,
-                contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide.none,
                 ),
               ),
@@ -91,7 +91,7 @@ class _ConversionCardState extends State<ConversionCard> {
               },
             ),
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 30),
           DropdownRow(
             label: 'From:',
             labelStyle: TextStyle(color: Colors.white, fontSize: 20),
@@ -141,7 +141,7 @@ class _ConversionCardState extends State<ConversionCard> {
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFF72585)),
-                    minimumSize: MaterialStateProperty.all<Size>(Size(200, 70)),
+                    minimumSize: MaterialStateProperty.all<Size>(Size(200, 50)),
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(16)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(

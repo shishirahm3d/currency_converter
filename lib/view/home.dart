@@ -45,11 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         leading: const Icon(Icons.currency_exchange, color: Colors.white), // Set the icon color to white
         title: const Text(
-          'Currency Converter - CC',
+          'Currency Converter',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white // Make the title text bold
           ),
         ),
         backgroundColor: const Color(0xFFF72585),
+        titleSpacing: -5,
       ),
       backgroundColor: Color(0xFF280F8F), // Set the background color using HEX value
       body: FutureBuilder<RatesModel>(
@@ -76,13 +77,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       if (showMessage) // Show message conditionally
                         const Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(3.0),
                           child: Text(
-                            'Realtime market data loaded.\nYou can turn off your mobile data..',
+                            'Realtime market data loaded.\nYou can turn off your mobile data.',
                             style: TextStyle(
-                              color: Colors.purpleAccent,
+                              color: Colors.white70,
                               fontWeight: FontWeight.bold,
                             ),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       Expanded(

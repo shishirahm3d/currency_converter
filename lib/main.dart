@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:currency_convertor/view/home.dart';
-import 'package:currency_convertor/view/conversion_history.dart'; // Import ConversionHistoryScreen
+import 'package:currency_convertor/view/conversion_history.dart';
 import 'package:currency_convertor/view/currency_rates.dart';
 import 'package:currency_convertor/view/about_us.dart';
 
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    ConversionHistoryScreen(), // Include ConversionHistoryScreen here
+    ConversionHistoryScreen(),
     CurrencyRatesScreen(),
     AboutUsScreen(),
   ];

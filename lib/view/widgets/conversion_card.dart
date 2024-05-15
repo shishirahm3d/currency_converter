@@ -75,7 +75,7 @@ class _ConversionCardState extends State<ConversionCard> {
                 hintStyle: TextStyle(color: Colors.black26, fontSize: 25),
                 filled: true,
                 fillColor: Colors.white,
-                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 15),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide.none,
@@ -91,7 +91,7 @@ class _ConversionCardState extends State<ConversionCard> {
               },
             ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
           DropdownRow(
             label: 'From:',
             labelStyle: TextStyle(color: Colors.white, fontSize: 20),
@@ -141,8 +141,8 @@ class _ConversionCardState extends State<ConversionCard> {
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFF72585)),
-                    minimumSize: MaterialStateProperty.all<Size>(Size(200, 50)),
-                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(16)),
+                    minimumSize: MaterialStateProperty.all<Size>(Size(200, 20)),
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(7)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),

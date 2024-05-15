@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, duplicate_ignore
-
 import 'package:currency_convertor/api/currencies_model.dart';
 import 'package:currency_convertor/api/rates_model.dart';
 import 'package:currency_convertor/api/app_url.dart';

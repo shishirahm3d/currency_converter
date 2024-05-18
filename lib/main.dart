@@ -4,6 +4,7 @@ import 'package:currency_convertor/view/conversion_history.dart';
 import 'package:currency_convertor/view/currency_rates.dart';
 import 'package:currency_convertor/view/about_us.dart';
 
+//Entry point with myapp function call
 void main() {
   runApp(const MyApp());
 }
@@ -38,7 +39,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState(); //Calling class object
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  //Building interface
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(0), // Hide the AppBar

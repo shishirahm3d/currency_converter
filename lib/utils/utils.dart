@@ -1,3 +1,4 @@
+//Convert the currency
 class Utils {
 
   static String convert(
@@ -7,7 +8,7 @@ class Utils {
       String currencyFinal,
       ) {
     double usdAmount = double.parse(amount) / exchangeRates[currencyBase];
-    String output = (usdAmount * exchangeRates[currencyFinal]).toStringAsFixed(4);
+    String output = (usdAmount * exchangeRates[currencyFinal]).toStringAsFixed(2);
     return output;
   }
 

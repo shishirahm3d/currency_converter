@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Widget class
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({Key? key}) : super(key: key);
 
@@ -38,6 +39,13 @@ class AboutUsScreen extends StatelessWidget {
             section: '60_A',
             dept: 'CSE',
             imageUrl: 'assets/images/mayishat.png', // Image from local assets
+          ),
+          _buildTeamMember(
+            name: 'Tanjila Islam Lamisha',
+            id: '213-15-14778',
+            section: '60_A',
+            dept: 'CSE',
+            imageUrl: 'assets/images/lamisha.png', // Image from local assets
           ),
         ],
       ),

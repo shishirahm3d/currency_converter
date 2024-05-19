@@ -9,7 +9,7 @@ class AboutUsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Team Members',
+          'About',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
@@ -24,28 +24,7 @@ class AboutUsScreen extends StatelessWidget {
             id: '213-15-14776',
             section: '60_A',
             dept: 'CSE',
-            imageUrl: 'assets/images/shishir.png', // Image from local assets
-          ),
-          _buildTeamMember(
-            name: 'Masum Kawsar',
-            id: '211-15-14643',
-            section: '60_A',
-            dept: 'CSE',
-            imageUrl: 'assets/images/pavel.png', // Image from local assets
-          ),
-          _buildTeamMember(
-            name: 'Mayishat Altab Mridu',
-            id: '213-15-14774',
-            section: '60_A',
-            dept: 'CSE',
-            imageUrl: 'assets/images/mayishat.png', // Image from local assets
-          ),
-          _buildTeamMember(
-            name: 'Tanjila Islam Lamisha',
-            id: '213-15-14778',
-            section: '60_A',
-            dept: 'CSE',
-            imageUrl: 'assets/images/lamisha.png', // Image from local assets
+            imageUrl: 'assets/images/shishir.png',
           ),
         ],
       ),

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1018551264650",
+    "firebase_url": "https://currency-converter-9f2a3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "currency-converter-9f2a3",
+    "storage_bucket": "currency-converter-9f2a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018551264650:android:8d27b9f934e3cf37669473",
+        "android_client_info": {
+          "package_name": "com.shishir.currency_converter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvzNZJ2O10fDNPw3pBFWHrUt-WIg1IYrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

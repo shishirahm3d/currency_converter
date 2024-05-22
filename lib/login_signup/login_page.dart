@@ -42,16 +42,28 @@ class _LoginPageState extends State<LoginPage> {
 
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Login successful!')),
-        );
-
-        // Navigate to the HomeScreen after successful login
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
-        );
-
+        // Check if the user's email is verified
+        User? user = FirebaseAuth.instance.currentUser;
+        if (user != null && user.emailVerified) {
+          // Navigate to the HomeScreen after successful login
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
+          );
+        } else {
+          // If email is not verified, show a message and option to resend verification email
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Please verify your email before logging in.'),
+              action: SnackBarAction(
+                label: 'Resend',
+                onPressed: () async {
+                  await _sendEmailVerification(user);
+                },
+              ),
+            ),
+          );
+        }
       } on FirebaseAuthException catch (e) {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
 
@@ -68,6 +80,31 @@ class _LoginPageState extends State<LoginPage> {
           SnackBar(content: Text(errorMessage)),
         );
       }
+    }
+  }
+
+  Future<void> _sendEmailVerification(User? user) async {
+    try {
+      await user?.sendEmailVerification();
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Verification Email Sent'),
+            content: Text('A verification email has been sent to ${user?.email}.'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
+    } catch (e) {
+      print('Error sending email verification: $e');
     }
   }
 
@@ -232,3 +269,5 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 }
+
+

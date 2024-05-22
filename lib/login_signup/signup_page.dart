@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:currency_converter/login_signup/common/page_header.dart';
 import 'package:currency_converter/login_signup/common/page_heading.dart';
 import 'package:currency_converter/login_signup/login_page.dart';
@@ -38,6 +40,14 @@ class _SignupPageState extends State<SignupPage> {
     }
   }
 
+  Future<String> _uploadProfileImage(File image) async {
+    final storageRef = FirebaseStorage.instance.ref();
+    final profileImagesRef = storageRef.child('profile-pictures/${_auth.currentUser?.uid}.jpg');
+    final uploadTask = profileImagesRef.putFile(image);
+    final snapshot = await uploadTask;
+    return await snapshot.ref.getDownloadURL();
+  }
+
   Future<void> _handleSignupUser() async {
     if (_signupFormKey.currentState!.validate()) {
       try {
@@ -46,14 +56,33 @@ class _SignupPageState extends State<SignupPage> {
           password: _passwordController.text,
         );
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Signup successful!')),
-        );
+        User? user = userCredential.user;
+        if (user != null) {
+          // Send email verification
+          await user.sendEmailVerification();
 
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const LoginPage()),
-        );
+          String? profileImageUrl;
+          if (_profileImage != null) {
+            profileImageUrl = await _uploadProfileImage(_profileImage!);
+          }
+
+          await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+            'name': _nameController.text,
+            'email': _emailController.text,
+            'phone': _contactController.text,
+            'password': _passwordController.text,
+            'profile-url': profileImageUrl,
+          });
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Signup successful! Verification email sent.')),
+          );
+
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginPage()),
+          );
+        }
       } on FirebaseAuthException catch (e) {
         String message;
         if (e.code == 'weak-password') {
@@ -131,7 +160,7 @@ class _SignupPageState extends State<SignupPage> {
                       const SizedBox(height: 16),
                       CustomInputField(
                         labelText: 'Name',
-                        hintText: 'Your name',
+                        hintText: 'Your full name',
                         isDense: true,
                         validator: (textValue) {
                           if (textValue == null || textValue.isEmpty) {
@@ -159,8 +188,8 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       const SizedBox(height: 16),
                       CustomInputField(
-                        labelText: 'Contact no.',
-                        hintText: 'Your contact number',
+                        labelText: 'Phone Number',
+                        hintText: 'Your phone number',
                         isDense: true,
                         validator: (textValue) {
                           if (textValue == null || textValue.isEmpty) {
@@ -235,3 +264,4 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 }
+

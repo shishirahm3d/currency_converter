@@ -3,7 +3,7 @@ import 'package:currency_converter/view/widgets/conversion_card.dart';
 import 'package:currency_converter/api/api_services.dart';
 import 'package:currency_converter/view/conversion_history.dart';
 import 'package:currency_converter/view/currency_rates.dart';
-import 'package:currency_converter/view/about.dart';
+import 'package:currency_converter/view/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       HomeContentScreen(showMessage: showMessage),
       _buildConversionHistoryScreen(),
       _buildCurrencyRatesScreen(),
-      _buildAboutUsScreen(),
+      _buildProfileScreen(),
     ]);
   }
 
@@ -58,8 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return CurrencyRatesScreen();
   }
 
-  Widget _buildAboutUsScreen() {
-    return AboutUsScreen();
+  Widget _buildProfileScreen() {
+    return ProfileScreen();  // Define the profile screen widget
   }
 
   void _onItemTapped(int index) {
@@ -104,9 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(Icons.attach_money),
               label: 'Rates',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.info),
-              label: 'About',
+            BottomNavigationBarItem(  // Add profile icon
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
         ),

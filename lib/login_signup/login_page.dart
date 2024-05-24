@@ -7,7 +7,7 @@ import 'package:currency_converter/login_signup/signup_page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:currency_converter/login_signup/common/page_heading.dart';
 import 'package:currency_converter/login_signup/common/custom_form_button.dart';
-import 'package:currency_converter/view/home.dart';
+import 'package:currency_converter/view/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

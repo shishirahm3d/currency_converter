@@ -110,7 +110,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Profile'),
+        title: const Text(
+          'Edit Profile',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white), // back button color white
         backgroundColor: const Color(0xFFF72585),
       ),
       body: Padding(
@@ -184,7 +191,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Update Profile',
                     style: TextStyle(
                       color: Colors.white,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:currency_converter/utils/utils.dart';
 import 'package:currency_converter/view/widgets/dropdown_row.dart';
-import 'package:currency_converter/view/conversion_history.dart';
+import 'package:currency_converter/view/conversion_history_page.dart';
 
 class ConversionCard extends StatefulWidget {
   final dynamic rates;
@@ -72,7 +72,7 @@ class _ConversionCardState extends State<ConversionCard> {
               controller: amountController,
               decoration: InputDecoration(
                 hintText: 'Enter Amount',
-                hintStyle: TextStyle(color: Colors.black26, fontSize: 25),
+                hintStyle: TextStyle(color: Colors.black26, fontSize: 20),
                 filled: true,
                 fillColor: Colors.white,
                 contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 15),
@@ -83,6 +83,7 @@ class _ConversionCardState extends State<ConversionCard> {
               ),
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Please enter an amount';
@@ -94,7 +95,7 @@ class _ConversionCardState extends State<ConversionCard> {
           const SizedBox(height: 20),
           DropdownRow(
             label: 'From:',
-            labelStyle: TextStyle(color: Colors.white, fontSize: 20),
+            labelStyle: TextStyle(color: Colors.white, fontSize: 18),
             value: dropdownValue1,
             currencies: widget.currencies,
             onChanged: (String? newValue) {
@@ -118,7 +119,7 @@ class _ConversionCardState extends State<ConversionCard> {
           ),
           DropdownRow(
             label: 'To:',
-            labelStyle: TextStyle(color: Colors.white, fontSize: 20),
+            labelStyle: TextStyle(color: Colors.white, fontSize: 18),
             value: dropdownValue2,
             currencies: widget.currencies,
             onChanged: (String? newValue) {
@@ -153,7 +154,7 @@ class _ConversionCardState extends State<ConversionCard> {
                       ? const CircularProgressIndicator()
                       : const Text(
                     'Convert',
-                    style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

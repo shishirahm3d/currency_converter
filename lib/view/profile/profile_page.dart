@@ -244,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 110, vertical: 10),
                     backgroundColor: Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -254,11 +254,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 5),
                 ElevatedButton.icon(
                   onPressed: _logout,
-                  icon: const Icon(Icons.login_outlined),
-                  label: const Text('Logout'),
+                  icon: const Icon(Icons.login_outlined, color: Colors.red), // Set the icon color to red
+                  label: const Text(
+                    'Logout',
+                    style: TextStyle(color: Colors.red), // Set the text color to red
+                  ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 10),
+                    backgroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
                   ),
                 ),
               ],

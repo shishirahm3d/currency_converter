@@ -37,11 +37,11 @@ class ConversionHistoryScreen extends StatelessWidget {
           return ListTile(
             title: Text(
               item.conversionDetails,
-              style: TextStyle(color: Colors.white), // Set text color to white
+              style: TextStyle(color: Colors.white, fontSize: 20), // Set text color to white
             ),
             subtitle: Text(
               'Date: ${item.date}, Time: ${item.time}',
-              style: TextStyle(color: Colors.white), // Set text color to white
+              style: TextStyle(color: Colors.white, fontSize: 16), // Set text color to white
             ),
           );
         },

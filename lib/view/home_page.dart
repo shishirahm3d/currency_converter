@@ -1,8 +1,8 @@
 import 'package:currency_converter/api/rates_model.dart';
 import 'package:currency_converter/view/widgets/conversion_card.dart';
 import 'package:currency_converter/api/api_services.dart';
-import 'package:currency_converter/view/conversion_history.dart';
-import 'package:currency_converter/view/currency_rates.dart';
+import 'package:currency_converter/view/conversion_history_page.dart';
+import 'package:currency_converter/view/currency_rates_page.dart';
 import 'package:currency_converter/view/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -129,10 +129,8 @@ class HomeContentScreen extends StatelessWidget {
         title: const Text(
           'Currency Converter',
           style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white, // Make the title text bold
-              fontFamily: 'Roboto-Regular',
-              fontSize: 26
+            fontWeight: FontWeight.bold, // Make the title text bold
+            color: Colors.white,
           ),
         ),
         backgroundColor: const Color(0xFFF72585),

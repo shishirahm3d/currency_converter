@@ -50,11 +50,11 @@ class _CurrencyRatesScreenState extends State<CurrencyRatesScreen> {
                 return ListTile(
                   title: Text(
                     '$currencyCode',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   subtitle: Text(
                     'Rate: $exchangeRate',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 );
               },

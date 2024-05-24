@@ -89,8 +89,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
             const SnackBar(content: Text('Profile updated successfully.')),
           );
 
-          // Navigate back to the previous screen (ProfileScreen)
-          Navigator.pop(context);
+          // Reload the profile page
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => EditProfilePage()), // Replace the current page with the profile page
+          );
         }
       } catch (e) {
         Navigator.pop(context); // Close the loading dialog
@@ -220,20 +223,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-      ),
-      body: Center(
-        child: Text('Profile Screen'),
       ),
     );
   }

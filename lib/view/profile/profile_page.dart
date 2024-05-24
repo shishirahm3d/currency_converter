@@ -136,6 +136,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  void _reloadProfile() {
+    setState(() {
+      _loadUserData();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -148,6 +154,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           centerTitle: true,
           backgroundColor: const Color(0xFFF72585),
+          actions: [
+            IconButton(
+              onPressed: _reloadProfile,
+              icon: Icon(Icons.refresh, color: Colors.white),
+            ),
+          ],
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -216,15 +228,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Text(
                     'Edit Profile',
                     style: TextStyle(
-                      color: Colors.white, // Set text color to white
-                      fontSize: 15, // Set font size to 15
+                      color: Colors.white,
+                      fontSize: 15,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 13),
                     backgroundColor: Colors.blue,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30), // Set button radius to 12
+                      borderRadius: BorderRadius.circular(30),
                     ),
                   ),
                 ),
@@ -254,10 +266,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 5),
                 ElevatedButton.icon(
                   onPressed: _logout,
-                  icon: const Icon(Icons.login_outlined, color: Colors.red), // Set the icon color to red
+                  icon: const Icon(Icons.login_outlined, color: Colors.red),
                   label: const Text(
                     'Logout',
-                    style: TextStyle(color: Colors.red), // Set the text color to red
+                    style: TextStyle(color: Colors.red),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -272,3 +284,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+

@@ -47,14 +47,26 @@ class _ConversionHistoryScreenState extends State<ConversionHistoryScreen> {
         itemCount: conversionHistoryList.length,
         itemBuilder: (context, index) {
           final item = conversionHistoryList[index];
-          return ListTile(
-            title: Text(
-              item.conversionDetails,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+          return Container(
+            margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.2), // Transparent background
+              borderRadius: BorderRadius.circular(10),
             ),
-            subtitle: Text(
-              'Date: ${item.date}, Time: ${item.time}',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.conversionDetails,
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Date: ${item.date}, Time: ${item.time}',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ],
             ),
           );
         },

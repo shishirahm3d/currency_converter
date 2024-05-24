@@ -50,6 +50,7 @@ class _SignupPageState extends State<SignupPage> {
 
   Future<void> _handleSignupUser() async {
     if (_signupFormKey.currentState!.validate()) {
+      _showLoadingDialog();
       try {
         final UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
           email: _emailController.text,
@@ -74,6 +75,8 @@ class _SignupPageState extends State<SignupPage> {
             'profile-url': profileImageUrl,
           });
 
+          Navigator.of(context).pop(); // Close the loading dialog
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Signup successful! Verification email sent.')),
           );
@@ -84,6 +87,7 @@ class _SignupPageState extends State<SignupPage> {
           );
         }
       } on FirebaseAuthException catch (e) {
+        Navigator.of(context).pop(); // Close the loading dialog
         String message;
         if (e.code == 'weak-password') {
           message = 'The password provided is too weak.';
@@ -96,6 +100,7 @@ class _SignupPageState extends State<SignupPage> {
           SnackBar(content: Text(message)),
         );
       } catch (e) {
+        Navigator.of(context).pop(); // Close the loading dialog
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('An error occurred. Please try again.')),
         );
@@ -103,11 +108,21 @@ class _SignupPageState extends State<SignupPage> {
     }
   }
 
+  void _showLoadingDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFF72585), //Header Background Color
+        backgroundColor: const Color(0xFFF72585), // Header Background Color
         body: SingleChildScrollView(
           child: Form(
             key: _signupFormKey,
@@ -264,4 +279,3 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 }
-

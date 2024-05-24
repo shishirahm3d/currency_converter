@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:currency_converter/view/profile/profile_page.dart'; // Import the profile page
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -44,6 +45,17 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   Future<void> _updateUserProfile() async {
     if (_editProfileFormKey.currentState!.validate()) {
+      // Show the loading dialog
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      );
+
       try {
         if (_currentUser != null) {
           if (_currentPasswordController.text.isNotEmpty) {
@@ -71,13 +83,20 @@ class _EditProfilePageState extends State<EditProfilePage> {
             'phone': _phoneController.text,
           });
 
+          Navigator.pop(context); // Close the loading dialog
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Profile updated successfully.')),
           );
 
-          Navigator.pop(context);
+          // Reload the profile page
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => ProfileScreen()), // Replace the current page with the profile page
+          );
         }
       } catch (e) {
+        Navigator.pop(context); // Close the loading dialog
         debugPrint('Error updating profile: $e');
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Failed to update profile. Please try again.')),

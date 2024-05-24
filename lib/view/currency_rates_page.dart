@@ -27,6 +27,7 @@ class _CurrencyRatesScreenState extends State<CurrencyRatesScreen> {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         backgroundColor: const Color(0xFFF72585), // Set app bar color
+        automaticallyImplyLeading: false, // Remove the back button
       ),
       backgroundColor: const Color(0xFF280F8F), // Set background color
       body: FutureBuilder<RatesModel>(

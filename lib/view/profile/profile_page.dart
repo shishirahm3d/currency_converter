@@ -221,7 +221,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 13),
                     backgroundColor: Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30), // Set button radius to 12
@@ -261,7 +261,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 95, vertical: 9),
                   ),
                 ),
               ],

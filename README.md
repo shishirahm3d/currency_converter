@@ -44,15 +44,15 @@ The *Realtime Currency Converter* is a cross-platform application designed to pr
 
 <div align="center">
   <!-- First Row -->
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/Login_Page.png?token=GHSAT0AAAAAAC2S4ZXOU6JABDTUQPMDU6EWZ2SXYPQ" alt="Login Page" width="200">
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/SignUp_Page.png?token=GHSAT0AAAAAAC2S4ZXPOJI4RZX6NN6EJCYWZ2SX6DQ" alt="SignUp Page" width="200">
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/Home_Currency_Selection.png?token=GHSAT0AAAAAAC2S4ZXONJRYGKVX7B3FQL72Z2SX5TQ" alt="Home Currency Selection" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/Login_Page.png" alt="Login Page" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/SignUp_Page.png" alt="SignUp Page" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/Home_Currency_Selection.png" alt="Home Currency Selection" width="200">
   
   <!-- Second Row -->
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/Home_Page.png?token=GHSAT0AAAAAAC2S4ZXPAGMPNOS75ZG6QLGYZ2SX5ZQ" alt="Home Page" width="200">
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/Conversion_History_Page.png?token=GHSAT0AAAAAAC2S4ZXPPXNIL4NX5WV5ZJLKZ2SYEOA" alt="Conversion History Page" width="200">
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/Currency_Rates_Page.png?token=GHSAT0AAAAAAC2S4ZXO5L7UDWVHQ5CUDWMWZ2SX5PA" alt="Currency Rates Page" width="200">
-  <img src="https://raw.githubusercontent.com/shishirahm3d/currency_converter/refs/heads/Version2.0/assets/ui_ss/Profile_Page.png?token=GHSAT0AAAAAAC2S4ZXOPRH4BRH7OO7UAZ5UZ2SYGDQ" alt="Profile Page" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/Home_Page.png" alt="Home Page" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/Conversion_History_Page.png" alt="Conversion History Page" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/Currency_Rates_Page.png" alt="Currency Rates Page" width="200">
+  <img src="https://github.com/shishirahm3d/currency_converter/blob/Version2.0/assets/ui_ss/Profile_Page.png" alt="Profile Page" width="200">
   
 </div>
 
